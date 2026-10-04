@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:584d7590d927cbab7fd482a36eefe6d6e23c985471086ac9d270b7e2506ebb96",
+  "pageVersion": "sha256:2e0cd1efd6a061859e72846d88bfb190743a1fdaa1f386f3860cb9993b9dab36",
   "claims": [
     {
       "id": "claim_cb5fe3f72803497eac3f09ebf02d97cd",
@@ -106,25 +106,41 @@
     },
     {
       "id": "claim_5ef1eed172f74ac6ab61e4128ed815e8",
-      "statement": "Integration tests (integration_tests.yml) run daily (1 PM UTC) with matrix over Python 3.10 and 3.14 against 9 default partner libraries (OpenAI, Anthropic, Fireworks, etc.), receive 30+ API credential environment variables, and serialize per-package tests via concurrency locks to prevent credential conflicts.",
+      "statement": "Integration tests (integration_tests.yml) run daily (1 PM UTC) with configurable matrix over Python 3.10 and 3.14 by default against 9 default partner libraries (OpenAI, Anthropic, Fireworks, Groq, MistralAI, XAI, Google VertexAI, Google GenAI, AWS), receive 30+ API credential environment variables, and serialize per-package tests via concurrency locks to prevent credential conflicts.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/integration_tests.yml#L152-L250",
-          "version": "repo-lines-v1:sha256:8b13d0714f4249cf34f163a21b2100013dbd521889e5b0aabc0ab66ff1980f79:eyJzZWxlY3RlZExpbmVDb3VudCI6OTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZTUzNjI0Nzk1ZDA0YmIxMjI2ZjI1NTgxOGUxNmRlZWZhMGU1ZTVlODYxN2I3MDZkMjAyNzA5MWYxMGE3ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNGQwMzc4MWVmYzEwM2VkMTMzNTk1YWFlMjlmYzI4NDdmMTBkYmQ1MjAzMWFhMTZiNmYzYTI0ODdjNDA5OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3ODljMzlkMGFiNzhkOWFjNzRjNDBiODEzZGRiNGNkYmRlMTc5Mjk0OTY4M2VhYzVmZTZiYjkyMDgwZTc2OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNjU0ZGI5YTFhZjZiYTQ1MDQ2NDViODQxNWM5ODZjOTlmMmMzYTU1YTUyMzgwN2IwMmRhZDllMjM1Y2Q5OGQifQ"
+          "resource": "repo://.github/workflows/integration_tests.yml#L101-L102",
+          "version": "repo-lines-v1:sha256:b407793dfc9280255e512d44c2313e414edc704874e9f954a624916b040b3ca9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFmNjE1MDQ4YzI4YzdhNjJkZTJhZWY5YzkyZWNlYWYwODc2Mjg0YTcyOTQ2MmQwMGEyMDcxYTI0Mjc5ZjdhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkNTJlZTI0MGEyNGY4MjU4MTZkMTNjZTFiYTc0MmZiMTVkZGFhNWM0MjNhODFmMDYwOTUxM2U3ZmFmYTNmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjJmZjk5NWQ5MjllY2Q0ZjY0NWVjZDU2MmEzMWNjNzlhYmZjMjU1MDc2OTAxZDMxYzg5ZGJhYzJlYWYwN2JiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU4N2YxODY0Zjg5NTk5ODA2OGM1OGIzNTQyZDE0MzRjNDhmMzkzMzkzZGFmNjFhODEyMzY3OGJjYWY0ZmZiOSJ9"
         },
         {
-          "resource": "repo://.github/workflows/integration_tests.yml#L56-L173",
-          "version": "repo-lines-v1:sha256:1a8edf16cffab1fed529e43b9a7cbacb77d936c43c70e0101b5774bbd60da086:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5Mjg4NDBhNmI3ZTYwMzAzZDg3YmU0ZDRkODJhNTBiMzMyODQyOTBkZWM0ZTM0MjhkNDdkOTNmYmVmZDFjNTkwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhM2M4NzQwMDg5NmU4Mzg5Njk2M2RjM2M3ZjBlZDU1ZDVjOTJlNGUyNzI0M2QyMDk0NWQ5NjhkMzdmZWExZDk5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjNjhjNjBmMmRiMTY1NGJlMDI3NzQ2MDJmMGFlNDU1N2FlNjM2ZTNiYzU3NTI0ZGJlMDMyYTNmYjlkMjVmMjFkIn0"
+          "resource": "repo://.github/workflows/integration_tests.yml#L154-L173",
+          "version": "repo-lines-v1:sha256:3e88b9079f04664fc415a39fb3b0ecd3bbff370c68c97fe0460c304bd45e8e24:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyY2MzOGE5MDU2ZDRjYTYyZDI4MzRkZDVjMzc4MmY2MWY1YmJkOTk3MTNjZGMyY2E1NzM1MmIzNThlNjUyZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NzhlZTlkNjc4MjRjNDAzMjU3MTU5OTkzNTRkZjYwYjkxODIzMWU3MTc4YTAyZGU3YjhlODE0MGU0NzI3ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YjMwNGVhMDY3YWNiNmRlNWFjNTI1OGVkZDFiNTVjNGEyYzM5YTc4M2M5MjcwNjE2MTNlYjE4OWQwNGE5MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlYjBmYzNmMGY1Zjc2ODY3YmUzOTQyMTAzY2EzZTA2MThmYTU4ZTFkY2M4NTZiMzljODNjZjk2ZWNiNjM2NTkifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/integration_tests.yml#L283-L333",
+          "version": "repo-lines-v1:sha256:e48dfd4a0fac7ce2d3867ada30b5716f03c420b070fe099a7dc02ae2be9cfe89:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMDc4NDhhNDM2NjY1NmIyYmE2MTk3YmUwMmI5MjA4MTQ1NDZmOWQ5YWQwYjUzMzllNGMyNmEyYzk0NjUxMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZThiODJlMzgwNWEzYTE4MDAzZjJmZTQ1ZDRmNWRiYjQ3YWZkZThjMmRkZjU1OWNlZDJiNGZkYzRmNDA2MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNWEzMTYxYTJhMWJjZTc2NWExMmNkMjIzNmNlYzY3MGJhMmI0ZGUyNDdiMWY1MzA1MmM3NzNjZmU0ZDZkNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmNWIwMWU1NjAwYjJhNDc4N2IxZWU0NGYxNTViODA2MGZmMjJmODc3ZGI0MDhlMjJjZTFmNWYwMzYyZWM1YzEifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/integration_tests.yml#L57-L58",
+          "version": "repo-lines-v1:sha256:ab47ab3e252d067fdd623ce50ddd22f47d8817402b95858e47d0fbd3e8ec70ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI4ODQwYTZiN2U2MDMwM2Q4N2JlNGQ0ZDgyYTUwYjMzMjg0MjkwZGVjNGUzNDI4ZDQ3ZDkzZmJlZmQxYzU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODE2MDg1ZWI2NTcwYzllMTBlMTVjYjQxNzkxNGU1YTc3Y2YwZmYxZDYxZTFmMDY5YzNhYmNmM2E1Y2QwMmU2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTNjODc0MDA4OTZlODM4OTY5NjNkYzNjN2YwZWQ1NWQ1YzkyZTRlMjcyNDNkMjA5NDVkOTY4ZDM3ZmVhMWQ5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2UyNzQyMjRlOTgyODgxZDk4MWI4YWRkZmRkYzk4ODBiMmYxZDA3ODAzMTVkNzBkNWQ1MTkxYzc1Zjk1YTViMiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/integration_tests.yml#L63-L74",
+          "version": "repo-lines-v1:sha256:8d1944a77eaef6436f3dd319fffe813f1a2d0459ccbd52703c307a40b25df576:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwYTU5NGYzNGI3ZjBlYTU3M2RhNzg3MDNlMjc0OTMwZGI3MThjOTQyY2FmM2MwNDI1MTc1NWY2MjNjNjBkNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0N2MzN2U1YTdmZjQzOGE3Y2MwOWY2OGZjN2I5YWNlMDAyZjNiYjUyMTQ4MzExNDZiZWQ4NmZiZjZmMmRhZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmMWQ3MGQ3MmJhZDIzMWQ0M2M1NzVhY2VmNjk0NjU4MGU0MzljODc5Nzk0ZWQyZWExZjRhNDAzNDAyNDUxNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4YmZlOTcyOTMzZTAyNmYyMGViZGI5ZGY4MzRkYzU3Y2U0NWFkZDUxM2UzMGY3MTBlNDgxNTRmZWU2MDgwNzYifQ"
         }
       ]
     },
     {
       "id": "claim_97644e1aaa3e49bda3b645ed2478cf80",
-      "statement": "Integration tests handle external repositories (google-genai, google-vertexai, langchain-aws) by checking them out separately and reorganizing into local partner directories, with special per-package install logic for overlaying local editable core and standard-tests packages.",
+      "statement": "Integration tests handle three external repositories (langchain-google containing google-genai and google-vertexai, and langchain-aws) by checking them out separately and reorganizing into local partner directories; for these external packages only, special installation logic overlays local editable core, langchain_v1, standard-tests, and (for aws) anthropic packages to test against current branch versions.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/integration_tests.yml#L179-L248",
-          "version": "repo-lines-v1:sha256:1c86a362fb57aaaecfadc02baa2e94d89c96e28c57287ad431c1cad8a0f304b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NjM5ZDFjYzRlNzE2NmUyYzlhYjNhM2Y4YTllMmIwMzNjYjcxNDZiYWU2MWU1YzZkOWM4YjIwYzEzYTNlZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzA3MzdhMjFmYWIzYjUzMjU2OWUxNGJkYTkyMzc0YjQ4NDc4NGNhZWZhOTgyZDIzYjU0ZjRhNjhjNDc4YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NmZmMzU1ZGZmZDExNTNiMDQ2NzhiMGIzMDVjNDBhNmU0MDNmYjk1YzEzNDUxNzZlODRmNTEzZTQyZmFiNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjNTZmYTBhMzEzZjc0ZGRkZTRkMWM2M2UxY2RmMGJhMWExMDQ4ZTY3NmQ4OTI0YTZjOTNjYmEyMjc4MTNiNDYifQ"
+          "resource": "repo://.github/workflows/integration_tests.yml#L180-L207",
+          "version": "repo-lines-v1:sha256:5b9aaeae8e8e4147295198397e709dfe42465c2d5367cb333e622ee4852257ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NjM5ZDFjYzRlNzE2NmUyYzlhYjNhM2Y4YTllMmIwMzNjYjcxNDZiYWU2MWU1YzZkOWM4YjIwYzEzYTNlZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNTRlMjI4NzhmYTFiNzg5MjAyZDA3NDkyOGM3ODBjN2I5MWJhNDIzODI1ZjI5MTJiZTI3YTZkN2YwOTRhODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NmZmMzU1ZGZmZDExNTNiMDQ2NzhiMGIzMDVjNDBhNmU0MDNmYjk1YzEzNDUxNzZlODRmNTEzZTQyZmFiNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyYjcxOWQ0ZDdiY2UyYzFkNTdjZjQ1NjhhYWY3ZjMxYjY3ZjhhMmFkZDEzYWUzMDQxODRiMjMwOTU5ZGE2ZGEifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/integration_tests.yml#L214-L249",
+          "version": "repo-lines-v1:sha256:491a66705ec67149fb81c6a3d5a28403f31955af39db2afb99e16fc0a145c453:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZTA4OWFmODgwOTlhNDE2MDQ2OTg2OTc5ZDBlOTU5M2I4ZDhiOWNkYmNmNjQwMjg0MWNiZWY2NWUyMzdhZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzA3MzdhMjFmYWIzYjUzMjU2OWUxNGJkYTkyMzc0YjQ4NDc4NGNhZWZhOTgyZDIzYjU0ZjRhNjhjNDc4YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1OTdhMWNmMGZhZWM4NDhiN2E0NDMxNTFkMWVhNTQzOWVkNTFlYTVmNTk3ODdhOTFmZmU0YzVjOTgyMDdjNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjNTZmYTBhMzEzZjc0ZGRkZTRkMWM2M2UxY2RmMGJhMWExMDQ4ZTY3NmQ4OTI0YTZjOTNjYmEyMjc4MTNiNDYifQ"
         }
       ]
     },
@@ -247,6 +263,6 @@
   ],
   "verification": {
     "by": "openwiki/0.5.0",
-    "at": "2026-09-28T08:35:20.640Z"
+    "at": "2026-10-04T10:13:33.652Z"
   }
 }
